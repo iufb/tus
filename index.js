@@ -17,7 +17,7 @@ const server = new Server({
 uploadApp.all('*', server.handle.bind(server));  // Handle all requests with tus server
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join('/home/iufb/Projects/tus-server/', 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
     next();
@@ -30,7 +30,7 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join('/home/iufb/Projects/tus-server/', 'index.html')); // Make sure the file path is correct
+    res.sendFile(path.join(__dirname, 'index.html')); // Make sure the file path is correct
 });
 app.get('/s3', async (req, res) => {
     const url = await generateUploadURL()
