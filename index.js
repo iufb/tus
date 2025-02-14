@@ -2,6 +2,7 @@ import { FileStore } from '@tus/file-store';
 import { Server } from '@tus/server';
 import express from 'express';
 import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { generateUploadURL } from './s3.js';
 
 const __filename = fileURLToPath(import.meta.url);
