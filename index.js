@@ -4,7 +4,7 @@ import express from 'express';
 import path from 'path';
 import { generateUploadURL } from './s3.js';
 
-const host = '127.0.0.1';
+const host = '0.0.0.0';
 const port = 1080;
 const app = express();
 const uploadApp = express();
